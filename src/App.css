@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background: #0f0f0f; /* Deep dark black background */
+  font-family: 'Roboto', sans-serif;
+  color: #e0e0e0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.app {
+  text-align: center;
+  background: #1a1a1a; /* Slightly lighter dark container */
+  border-radius: 15px;
+  padding: 2em;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.2); /* Subtle neon glow */
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
+  z-index: -1;
+  filter: blur(15px);
+}
+
+.app .mainHeading h1 {
+  font-size: 2.8em;
+  font-weight: bold;
+  color: #fff; /* Neon cyan */
+  /* text-shadow: 0 0 8px #00ffff, 0 0 15px #00ffff; */
+  margin-bottom: 1.5em;
+}
+
+.app .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #292929; /* Dark gray input container */
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  padding: 0.5em;
+  margin-bottom: 1.5em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.app .input input {
+  width: 90%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.2em;
+  color: #e0e0e0;
+  padding: 0.5em;
+}
+
+.app .input i {
+  font-size: 1.5em;
+  color: green;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.app .input i:hover {
+  transform: scale(1.1); /* Reduced hover intensity */
+  color: #14c664; /* Brighter neon pink on hover */
+}
+
+.app .todos {
+  margin-top: 1em;
+}
+
+.app .todos .todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #292929; /* Same dark gray for tasks */
+  border-radius: 10px;
+  padding: 0.8em;
+  margin-top: 1em;
+  border: 1px solid #3a3a3a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.app .todos .todo:hover {
+  transform: translateY(-3px); /* Reduced hover lift */
+  box-shadow: 0 6px 12px rgba(0, 255, 255, 0.2); /* Reduced hover glow intensity */
+}
+
+.app .todos .todo .left {
+  display: flex;
+  align-items: center;
+}
+
+.app .todos .todo .left p {
+  margin-left: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #b0b0b0; /* Light gray text */
+}
+
+.app .todos .todo .left p.completed {
+  text-decoration: line-through;
+  color: #5f5f5f; /* Dimmed gray for completed tasks */
+}
+
+.app .todos .todo i {
+  font-size: 1.5em;
+  color: #ff4500; /* Vibrant neon orange */
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.app .todos .todo i:hover {
+  transform: scale(1.2); /* Reduced hover scaling */
+  color: #ff6347; /* Brighter neon orange on hover */
+}
+
+@keyframes neonGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
   }
+}
+
+.app .mainHeading h1 {
+  animation: neonGlow 1.5s infinite;
 }

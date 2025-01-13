@@ -11,6 +11,7 @@ function App() {
         <br />
         <h2> Things to - DO </h2>
       </div>
+      <br />
       <div className="input">
         <input type="text" placeholder="🖊️ Add item..." />
         <i className="fas fa-plus"></i>
