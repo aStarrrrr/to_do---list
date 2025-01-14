@@ -78,7 +78,7 @@ body {
 
 .app .input i:hover {
   transform: scale(1.1); /* Reduced hover intensity */
-  color: #14c664; /* Brighter neon pink on hover */
+  color: #22d05c; /* Brighter neon pink on hover */
 }
 
 .app .todos {
